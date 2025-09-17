@@ -3,7 +3,7 @@ import { Button, View } from "react-native";
 import Input from "../components/Input";
 import Title from "../components/Title";
 
-export default function Home() {
+export default function Form() {
   // useState to store the input values
   const [num1, setNum1] = useState<number>(0);
   const [num2, setNum2] = useState<number>(0);
