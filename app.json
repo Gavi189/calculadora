@@ -4,12 +4,12 @@
     "slug": "calculadora",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    // "icon": "./assets/images/icon.png", // Removed due to missing file
     "scheme": "calculadora",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      // "image": "./assets/images/splash-icon.png", // Removed due to missing file
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        // "foregroundImage": "./assets/images/adaptive-icon.png", // Removed due to missing file
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -26,11 +26,22 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "output": "static"
+      // "favicon": "./assets/images/favicon.png" // Removed due to missing file
     },
     "plugins": [
-      "expo-router"
+      "expo-router", //Assim que começa
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true, // Ativa o suporte a Full-Text Search
+          "useSQLCipher": true, // Ativa o uso do SQLCipher para criptografia de banco de dados
+          "android": {
+            "enableFTS": false, // Desativa o suporte a Full-Text Search no Android
+            "useSQLCipher": false // Desativa o uso do SQLCipher no Android
+          }
+        }
+      ] //Assim que acaba
     ],
     "experiments": {
       "typedRoutes": true
