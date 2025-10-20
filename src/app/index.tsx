@@ -53,12 +53,13 @@ export default function TaskManager() {
         style={styles.list}
         data={Object.entries(tasks || {}).map(([id, t]) => ({
           id,
-          ...t,
+          title: t.title as string,
+          description: t.description as string,
         }))}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.taskItem}>
-            <Text style={styles.taskTitle}>{}</Text>
+            <Text style={styles.taskTitle}>{item.title}</Text>
             <Button title="🗑️" onPress={() => remove(Number(item.id))} />
           </View>
         )}
